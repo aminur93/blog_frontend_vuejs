@@ -25,6 +25,7 @@ who wants to work with laravel and vuejs.
 - reply system
 - multi auth system
 - author dashboard
+- Acl with Spite Package
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

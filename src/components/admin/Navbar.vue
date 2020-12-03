@@ -86,14 +86,14 @@
                             </v-list-item-title>
                         </v-list-item>
 
-                        <v-list-item>
+                        <v-list-item route to="/dashboard/role" exact>
                             <v-list-item-title class="white--text">
                                 <v-icon class="white--text">mdi-alpha-r-box</v-icon>
                                 Role
                             </v-list-item-title>
                         </v-list-item>
 
-                        <v-list-item>
+                        <v-list-item route to="/dashboard/permission" exact>
                             <v-list-item-title class="white--text">
                                 <v-icon class="white--text">mdi-alpha-p-box</v-icon>
                                 Permission

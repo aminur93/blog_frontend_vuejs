@@ -12,6 +12,8 @@ import category from './modules/category';
 import subcategories from './modules/subcategories';
 import tag from './modules/tag';
 import blogpost from './modules/blogpost';
+import permission from './modules/permission';
+import role from './modules/role';
 
 export default new Vuex.Store({
     state,
@@ -23,6 +25,8 @@ export default new Vuex.Store({
         category,
         subcategories,
         tag,
-        blogpost
+        blogpost,
+        permission,
+        role
     }
 });

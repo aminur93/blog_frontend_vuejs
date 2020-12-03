@@ -91,6 +91,54 @@ const routes = [
                 path: 'user',
                 name: 'user',
                 component: () => import('./views/admins/users/user.vue')
+            },
+
+            {
+                path: 'add_user',
+                name: 'add_user',
+                component: () => import('./views/admins/users/add_user.vue')
+            },
+
+            {
+                path: 'edit_user',
+                name: 'edit_user',
+                component: () => import('./views/admins/users/edit_user.vue')
+            },
+
+            {
+                path: 'role',
+                name: 'role',
+                component: () => import('./views/admins/roles/role.vue')
+            },
+
+            {
+                path: 'add_role',
+                name: 'add_role',
+                component: () => import('./views/admins/roles/add_role.vue')
+            },
+
+            {
+                path: 'edit_role',
+                name: 'edit_role',
+                component: () => import('./views/admins/roles/edit_role.vue')
+            },
+
+            {
+                path: 'permission',
+                name: 'permission',
+                component: () => import('./views/admins/permissions/permission.vue')
+            },
+
+            {
+                path: 'add_permission',
+                name: 'add_permission',
+                component: () => import('./views/admins/permissions/add_permission.vue')
+            },
+
+            {
+                path: 'edit_permission/:id',
+                name: 'edit_permission',
+                component: () => import('./views/admins/permissions/edit_permission.vue')
             }
         ],
         beforeEnter(to, from, next){
