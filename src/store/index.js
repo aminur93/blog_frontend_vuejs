@@ -14,6 +14,7 @@ import tag from './modules/tag';
 import blogpost from './modules/blogpost';
 import permission from './modules/permission';
 import role from './modules/role';
+import users from './modules/user';
 
 export default new Vuex.Store({
     state,
@@ -27,6 +28,7 @@ export default new Vuex.Store({
         tag,
         blogpost,
         permission,
-        role
+        role,
+        users
     }
 });

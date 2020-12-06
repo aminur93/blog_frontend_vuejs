@@ -7,7 +7,7 @@ import vuetify from './plugins/vuetify';
 import filters from './filter';
 Vue.filter(filters);
 
-import titleMixin from './mixins/titleMixin'
+import titleMixin from './mixins/titleMixin';
 Vue.mixin(titleMixin);
 
 

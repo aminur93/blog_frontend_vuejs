@@ -100,7 +100,7 @@ const routes = [
             },
 
             {
-                path: 'edit_user',
+                path: 'edit_user/:id',
                 name: 'edit_user',
                 component: () => import('./views/admins/users/edit_user.vue')
             },
@@ -118,7 +118,7 @@ const routes = [
             },
 
             {
-                path: 'edit_role',
+                path: 'edit_role/:id',
                 name: 'edit_role',
                 component: () => import('./views/admins/roles/edit_role.vue')
             },

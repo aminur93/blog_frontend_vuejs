@@ -40,14 +40,6 @@
 
                             <v-data-table :headers="headers" :items="roles" :search="search"  class="elevation-1">
 
-                                <template v-slot:item.permission_name="{item}">
-                                    <span v-if="item.permission_name">
-                                        <v-chip medium color="green" text-color="white">
-                                            {{ item.permission_name }}
-                                        </v-chip>
-                                    </span>
-                                </template>
-
                                 <template v-slot:item.actions="{ item }">
 
                                     <v-tooltip top>
@@ -87,7 +79,7 @@
 
     export default {
         name: "role",
-        title: 'Blog - Title',
+        title: 'Blog - Role',
         data(){
             return{
                 search: '',
@@ -117,6 +109,24 @@
             ...mapActions({
                 getRoles: 'role/get_role'
             }),
+
+            deleteRole: async function(id){
+                try {
+                    await this.$store.dispatch('role/delete_role', id).then(()=>{
+                        this.$swal.fire({
+                            toast: true,
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Role Deleted Successful',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        this.getRoles();
+                    });
+                }catch (e) {
+                    console.log(e)
+                }
+            },
         },
     }
 </script>
