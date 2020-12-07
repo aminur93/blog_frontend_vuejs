@@ -24,6 +24,10 @@ export const UPDATE_USER = (state, data) => {
     state.users.push(data);
 };
 
+export const CHANGE_PASSWORD_USER = (state, data) => {
+    state.users.push(data);
+};
+
 export const DELETE_USER = (state, id) => {
     state.users = state.users.filter(item => {
         return item.id !== id;

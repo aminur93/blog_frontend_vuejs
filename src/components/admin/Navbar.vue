@@ -123,6 +123,7 @@
                     { icon: 'mdi-view-list ', text: 'SubCategory', route: '/dashboard/subCategory' },
                     { icon: 'mdi-tag ', text: 'Tag', route: '/dashboard/tag' },
                     { icon: 'mdi-blogger', text: 'Blog Post', route: '/dashboard/blogpost' },
+                    { icon: 'mdi-message', text: 'Contact Message', route: '/dashboard/contact_us' },
                 ],
             }
         },

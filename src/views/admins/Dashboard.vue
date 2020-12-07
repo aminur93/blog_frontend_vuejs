@@ -303,7 +303,26 @@
                         <v-divider></v-divider>
 
                         <v-card-text>
-
+                            <v-simple-table>
+                                <template v-slot:default>
+                                    <thead>
+                                    <tr>
+                                        <th class="text-left">#Sl</th>
+                                        <th class="text-left">Name</th>
+                                        <th class="text-left">Email</th>
+                                        <th class="text-left">Role</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr v-for="(item,index) in userlist" :key="item.id">
+                                        <td>{{ index + 1 }}</td>
+                                        <td>{{ item.name }}</td>
+                                        <td>{{ item.email }}</td>
+                                        <td>{{ item.role }}</td>
+                                    </tr>
+                                    </tbody>
+                                </template>
+                            </v-simple-table>
                         </v-card-text>
                     </v-card>
                 </v-col>
@@ -349,6 +368,7 @@
                 categorylist: state => state.categoryList,
                 taglist: state => state.tagList,
                 bloglist: state => state.blogList,
+                userlist: state => state.user_list,
             }),
 
         },
@@ -361,6 +381,7 @@
             this.categoryList();
             this.tagList();
             this.blogList();
+            this.userList();
         },
 
         methods: {
@@ -514,6 +535,14 @@
                     console.log(e);
                 }
             },
+
+            userList: async function(){
+                try {
+                    await this.$store.dispatch('getUserList');
+                }catch (e) {
+                    console.log(e);
+                }
+            }
         }
     }
 </script>

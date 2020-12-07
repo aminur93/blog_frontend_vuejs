@@ -110,3 +110,7 @@ export const EMAIL_SEND = (state, data) => {
 export const RESET_PASSWORD = (state, data) => {
     state.userinfo = data;
 };
+
+export const USER_LIST = (state, data) => {
+    state.user_list = data;
+};

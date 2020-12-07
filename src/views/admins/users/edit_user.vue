@@ -17,12 +17,6 @@
                                 <v-text-field type="email" v-model="editUserData.email" label="Email"></v-text-field>
                                 <span v-if="errors.email" class="red--text">{{errors.email[0]}}</span>
 
-                                <v-text-field type="password" v-model="editUserData.password" label="Password"></v-text-field>
-                                <span v-if="errors.password" class="red--text">{{errors.password[0]}}</span>
-
-                                <v-text-field type="password" v-model="editUserData.password_confirmation" label="Confirm Password"></v-text-field>
-                                <span v-if="errors.password_confirmation" class="red--text">{{errors.password_confirmation[0]}}</span>
-
 
                                 <v-select
                                         v-model="editUserRoles"
@@ -58,6 +52,7 @@
         title: 'Blog - Edit User',
         data(){
             return{
+
                 errors: {}
             }
         },
@@ -97,13 +92,13 @@
 
             updateUser: async function(){
                 try {
+                    console.log(this.editUserData.password);
+
                     let id = this.$route.params.id;
                     let formData = new FormData();
                     formData.append('name', this.editUserData.name);
                     formData.append('email', this.editUserData.email);
-                    formData.append('password', this.editUserData.password);
-                    formData.append('password_confirmation', this.editUserData.password_confirmation);
-                     formData.append("roles", this.editUserRoles);
+                    formData.append("roles", this.editUserRoles);
 
                     await this.$store.dispatch('users/update_user', {id:id, data:formData}).then(()=>{
                         this.$swal.fire({

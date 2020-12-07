@@ -68,6 +68,16 @@
                                         <span>Delete</span>
                                     </v-tooltip>
 
+                                    <v-tooltip top>
+                                        <template v-slot:activator="{ on }">
+                                            <v-btn small text color="grey" v-on="on" router :to="`/dashboard/change_password/${item.id}`">
+                                                <v-icon left small>mdi-form-textbox-password</v-icon>
+                                                <span right class="caption text-lowercase">Change Password</span>
+                                            </v-btn>
+                                        </template>
+                                        <span>Change Password</span>
+                                    </v-tooltip>
+
                                 </template>
 
                             </v-data-table>

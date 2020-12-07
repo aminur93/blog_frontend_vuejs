@@ -106,6 +106,12 @@ const routes = [
             },
 
             {
+                path: 'change_password/:id',
+                name: 'change_password',
+                component: () => import('./views/admins/users/change_password.vue')
+            },
+
+            {
                 path: 'role',
                 name: 'role',
                 component: () => import('./views/admins/roles/role.vue')
@@ -139,6 +145,12 @@ const routes = [
                 path: 'edit_permission/:id',
                 name: 'edit_permission',
                 component: () => import('./views/admins/permissions/edit_permission.vue')
+            },
+
+            {
+                path: 'contact_us',
+                name: 'contact_us',
+                component: () => import('./views/admins/contactus/contact_us.vue')
             }
         ],
         beforeEnter(to, from, next){

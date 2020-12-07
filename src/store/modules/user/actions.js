@@ -30,6 +30,14 @@ export const update_user = ({commit}, {id, data}) => {
     });
 };
 
+export const change_password = ({commit}, {id, data}) => {
+    return http().post(`/users/password_change/${id}`, data).then((response) => {
+        commit('CHANGE_PASSWORD_USER', response.data);
+    });
+};
+
+
+
 export const delete_user = ({commit}, id) => {
     return http().delete(`/users/destroy/${id}`).then((response) => {
         commit('DELETE_USER', response.data);

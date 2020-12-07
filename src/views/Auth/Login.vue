@@ -58,16 +58,14 @@
                     formData.append('email', this.login.email);
                     formData.append('password', this.login.password);
 
-                    await this.$store.dispatch('login', formData);
+                    await this.$store.dispatch('login', formData).then(()=>{
+                        this.$router.push({ path: '/dashboard' });
+                    });
 
-                    await this.$router.push({ path: '/dashboard' });
-
-
-                    this.login.email = '';
-                    this.login.password = '';
+                    this.login={};
 
                 }catch (error) {
-                    console.log('failed');
+                    console.log(error);
                 }
 
             },

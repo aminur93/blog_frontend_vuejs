@@ -101,6 +101,14 @@ export const getBlogList = ({commit}) => {
     });
 };
 
+export const getUserList = ({commit}) => {
+    return http().get('/dashboard/get_user').then((response) => {
+        commit('USER_LIST', response.data.user_list);
+    });
+};
+
+
+
 export const getAllCategories = ({commit}) => {
     return http().get('front/get_category').then((response) => {
         commit('FRONT_GET_ALL_CATEGORY', response.data.categories);
@@ -231,5 +239,7 @@ export const contact_blog = ({commit}, data) => {
         commit('CONTACT_US', response.data);
     });
 };
+
+
 
 
