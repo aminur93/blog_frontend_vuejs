@@ -114,3 +114,15 @@ export const RESET_PASSWORD = (state, data) => {
 export const USER_LIST = (state, data) => {
     state.user_list = data;
 };
+
+export const SET_CONTACT_MESSAGE = (state, data) => {
+    state.contact_info = data;
+};
+
+export const SINGLE_CONTACT = (state, data) => {
+    state.single_contact = data;
+};
+
+export const Email_SEND = (state, data) => {
+    state.emailinfo = data;
+};

@@ -151,6 +151,12 @@ const routes = [
                 path: 'contact_us',
                 name: 'contact_us',
                 component: () => import('./views/admins/contactus/contact_us.vue')
+            },
+
+            {
+                path: 'reply_message/:id',
+                name: 'reply_message',
+                component: () => import('./views/admins/contactus/reply_message.vue')
             }
         ],
         beforeEnter(to, from, next){
@@ -230,7 +236,7 @@ const routes = [
             },
             {
                 path: 'contact',
-                name: 'contact_us',
+                name: 'contact',
                 component: () => import('./views/blogs/contact_us.vue')
             }
         ]

@@ -161,17 +161,11 @@
         display: inline-block;
         max-width: 80%;
         overflow-y: auto;
-        overflow-x: hidden;
+        overflow-x: auto;
         contain: content;
         will-change: transform;
         box-shadow: 0 0 0 0 !important;
         border-radius: 4px;
-    }
-
-    .theme--light.v-list {
-    }
-
-    .v-list {
     }
 
     .v-menu__content.theme--light.v-menu__content--fixed.menuable__content__active{

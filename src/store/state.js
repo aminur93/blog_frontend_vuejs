@@ -27,6 +27,7 @@ export default {
     blogcomments: [],
     searchBlogList: [],
     contact_info: [],
+    single_contact: {},
     user_list: [],
 
     emailinfo: null,

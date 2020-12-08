@@ -73,7 +73,7 @@
 
 <script>
     export default {
-        name: "contact_us",
+        name: "contact",
         title: 'Blogs - Contact-Us',
 
         data(){

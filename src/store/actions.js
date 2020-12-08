@@ -240,6 +240,24 @@ export const contact_blog = ({commit}, data) => {
     });
 };
 
+export const get_contact = ({commit}) => {
+    return http().get('/dashboard/get_contact').then((response) => {
+        commit('SET_CONTACT_MESSAGE', response.data.contact_message);
+    });
+};
+
+export const single_contact = ({commit}, id) => {
+    return http().get(`/dashboard/single_contact/${id}`).then((response) => {
+        commit('SINGLE_CONTACT', response.data.single_contact_list);
+    });
+};
+
+export const reply_mail = ({commit}, data) => {
+    return http().post(`front/send/email`, data).then((response) => {
+        commit('Email_SEND', response.data);
+    });
+};
+
 
 
 

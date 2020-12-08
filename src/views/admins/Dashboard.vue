@@ -334,7 +334,7 @@
                         <v-divider></v-divider>
 
                         <v-card-text>
-
+                            <canvas id="myChart" width="400" height="400"></canvas>
                         </v-card-text>
                     </v-card>
                 </v-col>
@@ -348,14 +348,15 @@
 
 <script>
     import {mapState, mapActions} from 'vuex';
-
+    import Chart from 'chart.js';
+    import planetChartData from '../../chart-data.js';
     export default {
         name: "Dashboard",
         title: 'Blog - Dashboard',
 
         data(){
             return{
-
+                planetChartData: planetChartData,
             }
         },
 
@@ -382,6 +383,7 @@
             this.tagList();
             this.blogList();
             this.userList();
+            this.createChart('myChart', this.planetChartData);
         },
 
         methods: {
@@ -394,6 +396,15 @@
                 blog_feature: 'blogpost/blog_feature',
                 blog_unfeature: 'blogpost/blog_unfeature',
             }),
+
+            createChart(chartId, chartData) {
+                const ctx = document.getElementById(chartId);
+                 new Chart(ctx, {
+                    type: chartData.type,
+                    data: chartData.data,
+                    options: chartData.options,
+                });
+            },
 
             approve(id){
                 this.blog_approve(id).then(() => {
